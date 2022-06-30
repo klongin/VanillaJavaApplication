@@ -31,7 +31,7 @@ public class DomXMLParser {
     }
 
     // write doc to output stream
-    private static void writeXml(Document doc,
+    public static void writeXml(Document doc,
                                  OutputStream output)
         throws TransformerException {
 

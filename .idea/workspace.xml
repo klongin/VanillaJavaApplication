@@ -4,28 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c8822f2-8a72-4a7d-8588-73c165fd9c92" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jsonparsing/JsonParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/record/RecordSanitizer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/report/Report.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/xmlparsing/DomXMLParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/xmlparsing/JacksonXMLParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/telekomdocuments/in/example1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/jsonparsing/JsonTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/jsonparsing/pojo/AuthorPojo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/jsonparsing/pojo/BookPojo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/jsonparsing/pojo/DayPojo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/jsonparsing/pojo/SimpleTestCaseJsonPojo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.json" afterDir="false" />
+    <list default="true" id="8c8822f2-8a72-4a7d-8588-73c165fd9c92" name="Changes" comment="Initial Commit: JSON parser is finished, XML parser is being developed, the project structure is partially built">
+      <change afterPath="$PROJECT_DIR$/src/test/java/record/RecordSanitizerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/record/in/example.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/record/RecordSanitizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/record/RecordSanitizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xmlparsing/DomXMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xmlparsing/DomXMLParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/telekomdocuments/in/example1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/telekomdocuments/in/example1.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +50,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Karlo\IdeaProjects\VanillaJavaApplication" />
       <recent name="C:\Users\Karlo\IdeaProjects\VanillaJavaApplication\src\telekom-documents\in" />
       <recent name="C:\Users\Karlo\IdeaProjects\VanillaJavaApplication\src\telekom-documents" />
     </key>
@@ -78,7 +64,7 @@
       <recent name="jsonparsing" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JsonTest.authorBookScenario1">
+  <component name="RunManager" selected="JUnit.RecordSanitizerTest.sanitizeRecord">
     <configuration name="JsonTest.authorBookScenario1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VanillaJavaApplication" />
       <extension name="coverage">
@@ -95,65 +81,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonTest.dayTestScenario1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RecordSanitizerTest.removeWhereElementHasCondition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VanillaJavaApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="jsonparsing.*" />
+          <option name="PATTERN" value="record.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="jsonparsing" />
-      <option name="MAIN_CLASS_NAME" value="jsonparsing.JsonTest" />
-      <option name="METHOD_NAME" value="dayTestScenario1" />
+      <option name="PACKAGE_NAME" value="record" />
+      <option name="MAIN_CLASS_NAME" value="record.RecordSanitizerTest" />
+      <option name="METHOD_NAME" value="removeWhereElementHasCondition" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonTest.fromJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RecordSanitizerTest.sanitizeRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VanillaJavaApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="jsonparsing.*" />
+          <option name="PATTERN" value="record.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="jsonparsing" />
-      <option name="MAIN_CLASS_NAME" value="jsonparsing.JsonTest" />
-      <option name="METHOD_NAME" value="fromJson" />
+      <option name="PACKAGE_NAME" value="record" />
+      <option name="MAIN_CLASS_NAME" value="record.RecordSanitizerTest" />
+      <option name="METHOD_NAME" value="sanitizeRecord" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonTest.stringify" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RecordSanitizerTest.setCharCategoryName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VanillaJavaApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="jsonparsing.*" />
+          <option name="PATTERN" value="record.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="jsonparsing" />
-      <option name="MAIN_CLASS_NAME" value="jsonparsing.JsonTest" />
-      <option name="METHOD_NAME" value="stringify" />
+      <option name="PACKAGE_NAME" value="record" />
+      <option name="MAIN_CLASS_NAME" value="record.RecordSanitizerTest" />
+      <option name="METHOD_NAME" value="setCharCategoryName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonTest.toJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RecordSanitizerTest.setPriceCategoryName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VanillaJavaApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="jsonparsing.*" />
+          <option name="PATTERN" value="record.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="jsonparsing" />
-      <option name="MAIN_CLASS_NAME" value="jsonparsing.JsonTest" />
-      <option name="METHOD_NAME" value="toJson" />
+      <option name="PACKAGE_NAME" value="record" />
+      <option name="MAIN_CLASS_NAME" value="record.RecordSanitizerTest" />
+      <option name="METHOD_NAME" value="setPriceCategoryName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RecordSanitizerTest.sanitizeRecord" />
+        <item itemvalue="JUnit.RecordSanitizerTest.removeWhereElementHasCondition" />
+        <item itemvalue="JUnit.RecordSanitizerTest.setCharCategoryName" />
+        <item itemvalue="JUnit.RecordSanitizerTest.setPriceCategoryName" />
         <item itemvalue="JUnit.JsonTest.authorBookScenario1" />
-        <item itemvalue="JUnit.JsonTest.dayTestScenario1" />
-        <item itemvalue="JUnit.JsonTest.stringify" />
-        <item itemvalue="JUnit.JsonTest.toJson" />
-        <item itemvalue="JUnit.JsonTest.fromJson" />
       </list>
     </recent_temporary>
   </component>
@@ -182,8 +168,17 @@
       <updated>1656422268578</updated>
       <workItem from="1656422270926" duration="714000" />
       <workItem from="1656423001961" duration="17601000" />
-      <workItem from="1656484070435" duration="329000" />
+      <workItem from="1656484070435" duration="16993000" />
+      <workItem from="1656519076598" duration="10338000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit: JSON parser is finished, XML parser is being developed, the project structure is partially built">
+      <created>1656484457341</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656484457341</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +194,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit: JSON parser is finished, XML parser is being developed, the project structure is partially built" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit: JSON parser is finished, XML parser is being developed, the project structure is partially built" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
