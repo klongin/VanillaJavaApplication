@@ -1,4 +1,7 @@
-<tk:getPricesResponse xmlns:tk="http://telekom.si/services/product/lifecycle/v1" xmlns:cb="http://telekom.si/schemas/common/base/v1" xmlns:pc="http://telekom.si/schemas/product/lifecycle/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<tk:getPricesResponse xmlns:tk="http://telekom.si/services/product/lifecycle/v1"
+                      xmlns:cb="http://telekom.si/schemas/common/base/v1"
+                      xmlns:pc="http://telekom.si/schemas/product/lifecycle/v1"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <pc:price>
         <cb:id>111</cb:id>
         <cb:code>387268052</cb:code>

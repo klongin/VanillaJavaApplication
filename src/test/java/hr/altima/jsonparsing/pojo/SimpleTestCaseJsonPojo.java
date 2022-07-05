@@ -1,4 +1,4 @@
-package jsonparsing.pojo;
+package hr.altima.jsonparsing.pojo;
 
 public class SimpleTestCaseJsonPojo {
     private String title;

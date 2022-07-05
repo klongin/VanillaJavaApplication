@@ -1,4 +1,4 @@
-package jsonparsing.pojo;
+package hr.altima.jsonparsing.pojo;
 
 import java.util.List;
 

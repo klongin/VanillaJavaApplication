@@ -1,0 +1,3 @@
+jdbc:postgresql://localhost:5432/report_db
+postgres
+MiAmorVienna8962
