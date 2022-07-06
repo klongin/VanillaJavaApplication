@@ -1,6 +1,7 @@
 package hr.altima.utilities.jsonparsing;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -8,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import org.apache.commons.io.FilenameUtils;
 
 /**
  * Class for parsing JSON files
@@ -57,5 +59,10 @@ public class JsonParser {
         }
 
         return objectWriter.writeValueAsString(jsonNode);
+    }
+
+    public static void writeFile(Object a, String fileName, String directory) throws IOException {
+        objectMapper.writeValue(
+            Paths.get(String.format("%s\\%s.json", directory, FilenameUtils.removeExtension(fileName))).toFile(), a);
     }
 }

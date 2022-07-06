@@ -9,6 +9,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import hr.altima.dataaccess.PostgreSQLDatabase;
 import hr.altima.dataaccess.tables.Report;
+import hr.altima.utilities.jsonparsing.JsonParser;
 import hr.altima.utilities.sanitization.XPathSanitizer;
 import hr.altima.utilities.xmlparsing.DomXMLParser;
 import org.xml.sax.SAXException;
@@ -56,9 +57,10 @@ public class Runner {
                                     xPathParser.getDocument().getElementsByTagName("cb:id").item(0).getTextContent(),
                                     System.currentTimeMillis(),
                                     xPathParser.getDocument().getDocumentElement().getTagName());
+                            JsonParser.writeFile(report, files[i].getName(),
+                                "C:\\Users\\Karlo\\IdeaProjects\\VanillaJavaApplication\\report");
                             report.setDatabase(database);
                             report.post();
-
 
                             i++;
                         } catch (IOException | SAXException | XPathExpressionException | TransformerException |
@@ -69,7 +71,7 @@ public class Runner {
                         timer.cancel();
                     }
                 }
-            }, 0, 30000);
+            }, 0, 1000);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
