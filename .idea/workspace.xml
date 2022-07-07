@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c8822f2-8a72-4a7d-8588-73c165fd9c92" name="Changes" comment="Resolved: Json reports">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hr/altima/service/CleanAndReportTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Log4j2.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/hr/altima/classpath/ClasspathTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Log4j2.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hr/altima/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/RunnerWithoutXPath.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/dataaccess/tables/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hr/altima/dataaccess/tables/Report.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/utilities/jsonparsing/JsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hr/altima/utilities/jsonparsing/JsonParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/utilities/xmlparsing/DomXMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hr/altima/utilities/xmlparsing/DomXMLParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telekomdocuments/in/example1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/telekomdocuments/in/example2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/telekomdocuments/in/example3.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +30,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -48,31 +58,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Karlo/IdeaProjects/VanillaJavaApplication/telekomdocuments/in&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.externalResources&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/Karlo/IdeaProjects/VanillaJavaApplication/src/test/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.externalResources"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Karlo\IdeaProjects\VanillaJavaApplication\src\test\resources" />
       <recent name="C:\Users\Karlo\IdeaProjects\VanillaJavaApplication\telekomdocuments\in" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Karlo\IdeaProjects\VanillaJavaApplication\telekomdocuments\in" />
+      <recent name="C:\Users\Karlo\IdeaProjects\VanillaJavaApplication\telekomdocuments" />
       <recent name="C:\Users\Karlo\IdeaProjects\VanillaJavaApplication" />
       <recent name="C:\Users\Karlo\IdeaProjects\VanillaJavaApplication\src\telekom-documents\in" />
       <recent name="C:\Users\Karlo\IdeaProjects\VanillaJavaApplication\src\telekom-documents" />
@@ -108,6 +124,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ClasspathTest.utilSolution" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="VanillaJavaApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hr.altima.classpath.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hr.altima.classpath" />
+      <option name="MAIN_CLASS_NAME" value="hr.altima.classpath.ClasspathTest" />
+      <option name="METHOD_NAME" value="utilSolution" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RecordSanitizerTest.sanitizeRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VanillaJavaApplication" />
       <extension name="coverage">
@@ -119,22 +151,6 @@
       <option name="PACKAGE_NAME" value="record" />
       <option name="MAIN_CLASS_NAME" value="record.RecordSanitizerTest" />
       <option name="METHOD_NAME" value="sanitizeRecord" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RecordSanitizerTest.setCharCategoryName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="VanillaJavaApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="record.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="record" />
-      <option name="MAIN_CLASS_NAME" value="record.RecordSanitizerTest" />
-      <option name="METHOD_NAME" value="setCharCategoryName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -159,10 +175,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Runner" />
+        <item itemvalue="JUnit.ClasspathTest.utilSolution" />
         <item itemvalue="Application.RunnerWithoutXPath" />
         <item itemvalue="JUnit.RecordSanitizerTest.sanitizeRecord" />
         <item itemvalue="JUnit.RecordSanitizerTest.setPriceCategoryName" />
-        <item itemvalue="JUnit.RecordSanitizerTest.setCharCategoryName" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +202,10 @@
       <workItem from="1656936713365" duration="4503000" />
       <workItem from="1656941258006" duration="5324000" />
       <workItem from="1657005908039" duration="19656000" />
-      <workItem from="1657091815320" duration="2757000" />
+      <workItem from="1657091815320" duration="3625000" />
+      <workItem from="1657106076043" duration="56000" />
+      <workItem from="1657177340210" duration="10421000" />
+      <workItem from="1657192282161" duration="6696000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit: JSON parser is finished, XML parser is being developed, the project structure is partially built">
       <created>1656484457341</created>
@@ -209,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657029433983</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Resolved: Json reports">
+      <created>1657094742421</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657094742421</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

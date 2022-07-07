@@ -11,6 +11,8 @@ target/
 *.iws
 *.iml
 *.ipr
+./telekomdocuments/out
+./telekomdocuments/report
 
 ### Eclipse ###
 .apt_generated

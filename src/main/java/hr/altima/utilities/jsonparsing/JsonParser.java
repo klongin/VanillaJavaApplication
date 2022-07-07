@@ -61,8 +61,9 @@ public class JsonParser {
         return objectWriter.writeValueAsString(jsonNode);
     }
 
-    public static void writeFile(Object a, String fileName, String directory) throws IOException {
+    public static void objectToJson(Object a, String directory, String fileName) throws IOException {
         objectMapper.writeValue(
-            Paths.get(String.format("%s\\%s.json", directory, FilenameUtils.removeExtension(fileName))).toFile(), a);
+            Paths.get(String.format("%s\\report-%s.json", directory, FilenameUtils.removeExtension(fileName))).toFile(),
+            a);
     }
 }

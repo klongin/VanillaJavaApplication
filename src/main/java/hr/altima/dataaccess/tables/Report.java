@@ -9,10 +9,6 @@ import hr.altima.dataaccess.PostgreSQLDatabase;
 /**
  * Entity class that represents a single Report inside of
  * the database.
- * <p>
- * QUESTION:
- * What is the equivalent of PostgreSQL Interval inside of
- * Java?
  */
 public class Report {
     private int id;
@@ -32,14 +28,13 @@ public class Report {
     public boolean fetch() throws SQLException {
         this.db.connect();
         List<ArrayList<String>> list;
-        String query = "SELECT * FROM report WHERE id = " + getID() + ";";
+        String query = String.format("SELECT * FROM report WHERE id = %d;", getID());
         list = db.getData(query);
         try {
             setMessageID(list.get(0).get(1));
             setExecutionTime(Timestamp.valueOf(list.get(0).get(2)));
             setRootElement(list.get(0).get(3));
             return this.db.disconnect();
-
         } catch (IndexOutOfBoundsException ioobe) {
             return false;
         }
@@ -63,18 +58,19 @@ public class Report {
                 getExecutionTime() + "', '" +
                 getRootElement() + "');";
         if (db.setData(query)) {
+            setId(Integer.parseInt(db.getData("SELECT currval(pg_get_serial_sequence('report','id'));").get(0).get(0)));
             db.disconnect();
         }
     }
 
     public boolean remove() throws SQLException {
         db.connect();
-        String query = "DELETE FROM report WHERE id = " + getID() + ";";
-        if (db.setData(query)) {
-            return db.disconnect();
-        } else {
+        String query = String.format("DELETE FROM report WHERE id = %d;", getID());
+        if (!db.setData(query)) {
+            db.disconnect();
             return false;
         }
+        return db.disconnect();
     }
 
 

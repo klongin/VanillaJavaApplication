@@ -12,11 +12,12 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import org.apache.commons.lang3.StringUtils;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 public class DomXMLParser {
-    private static DocumentBuilder builder = createDocumentBuilder();
+    private static final DocumentBuilder builder = createDocumentBuilder();
 
     private static DocumentBuilder createDocumentBuilder() {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -48,26 +49,30 @@ public class DomXMLParser {
     public static File[] readFiles(String directory) throws IOException {
         File dir = new File(directory);
         if (dir.exists() && dir.isDirectory()) {
-            File[] files = dir.listFiles((d, name) -> name.endsWith(".xml"));
-            return files;
+            return dir.listFiles((d, name) -> name.endsWith(".xml"));
         }
         return new File[0];
     }
 
-    public static void writeFile(Document document, String fileName, String directory)
+    public static void writeDocumentToFile(Document document, String directory, String fileName)
         throws IOException, TransformerException {
-        FileOutputStream fos = new FileOutputStream(directory + fileName);
+        FileOutputStream fos = new FileOutputStream(directory + "\\" + fileName);
         writeXml(document, fos);
     }
 
-    public static void writeFiles(Document[] documents, String directory) throws IOException, TransformerException {
-        FileOutputStream fos = null;
-        int num = 0;
-        for (Document xmlDoc : documents) {
-            fos = new FileOutputStream(directory + "sanitized" + num + ".xml");
-            writeXml(xmlDoc, fos);
-            num++;
+    public static boolean deleteFiles(File[] files) {
+        for (File f : files) {
+            if (!f.delete()) {
+                return false;
+            }
         }
+        return true;
+    }
+
+
+    public static String getParentDirectory(File file) {
+        return StringUtils.substringBefore(file.getAbsolutePath(),
+            file.getParentFile().getName() + "\\" + file.getName());
     }
 
 
