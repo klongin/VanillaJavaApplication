@@ -50,15 +50,4 @@ class JsonTest {
         System.out.println(JsonParser.prettyStringify(node));
     }
 
-    @Test
-    void convertJsonToObject() throws IOException {
-        Report r1 = new Report("111", System.currentTimeMillis(), "root element");
-
-        JsonParser.convertObjectToJson(r1, new File("src//test//java//hr//altima//jsonparsing//pojo").getAbsolutePath(),
-            "111");
-
-        Report r2 = (Report) JsonParser.convertJsonToObject(
-            new File("src//test//java//hr//altima//jsonparsing//pojo//Report-111.json"));
-        System.out.println(r2.getMessageID() + r2.getExecutionTime() + r2.getRootElement());
-    }
 }
