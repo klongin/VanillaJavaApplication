@@ -7,6 +7,6 @@ public class Runner {
 
     public static void main(String[] args) {
         Timer timer = new Timer();
-        timer.schedule(new CleanAndReportTask(), 0, 1000);
+        timer.schedule(new CleanAndReportTask(), 0, 30000);
     }
 }

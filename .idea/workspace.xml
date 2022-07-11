@@ -4,22 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c8822f2-8a72-4a7d-8588-73c165fd9c92" name="Changes" comment="Resolved: Json reports">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hr/altima/service/CleanAndReportTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Log4j2.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/hr/altima/classpath/ClasspathTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Log4j2.properties" afterDir="false" />
+    <list default="true" id="8c8822f2-8a72-4a7d-8588-73c165fd9c92" name="Changes" comment="Fixed: Logic, Relative paths, GitIgnore, Logging">
+      <change afterPath="$PROJECT_DIR$/report.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hr/altima/dataaccess/repositories/FileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hr/altima/dataaccess/repositories/ReportRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hr/altima/dataaccess/repositories/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hr/altima/utils/txtparsing/TextFileParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hr/altima/utils/xmlparsing/DomXMLParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/hr/altima/utils/xmlparsing/DomXMLParserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection.txt" beforeDir="false" afterPath="$PROJECT_DIR$/connection.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hr/altima/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/RunnerWithoutXPath.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/dataaccess/PostgreSQLDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hr/altima/dataaccess/PostgreSQLDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/dataaccess/tables/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hr/altima/dataaccess/tables/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/utilities/jsonparsing/JsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hr/altima/utilities/jsonparsing/JsonParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/utilities/xmlparsing/DomXMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hr/altima/utilities/xmlparsing/DomXMLParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/telekomdocuments/in/example1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/telekomdocuments/in/example2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/telekomdocuments/in/example3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/service/CleanAndReportTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hr/altima/service/CleanAndReportTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/utilities/jsonparsing/JsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hr/altima/utils/jsonparsing/JsonParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/utilities/sanitization/RecordSanitizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/utilities/sanitization/XPathSanitizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hr/altima/utils/sanitization/XPathSanitizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/utilities/xmlparsing/DomXMLParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hr/altima/utilities/xmlparsing/JacksonXMLParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hr/altima/jsonparsing/JsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hr/altima/jsonparsing/JsonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hr/altima/record/RecordSanitizerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hr/altima/record/in/example.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/telekomdocuments/in/example2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/telekomdocuments/in/example2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telekomdocuments/in/example3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/telekomdocuments/in/example3.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +51,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,7 +76,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/Karlo/IdeaProjects/VanillaJavaApplication/src/test/resources",
+    "last_opened_file_path": "C:/Users/Karlo/IdeaProjects/VanillaJavaApplication/telekomdocuments/in",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
@@ -83,8 +93,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Karlo\IdeaProjects\VanillaJavaApplication\src\test\resources" />
       <recent name="C:\Users\Karlo\IdeaProjects\VanillaJavaApplication\telekomdocuments\in" />
+      <recent name="C:\Users\Karlo\IdeaProjects\VanillaJavaApplication\src\test\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Karlo\IdeaProjects\VanillaJavaApplication\telekomdocuments\in" />
@@ -140,6 +150,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JsonTest.convertJsonToObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="VanillaJavaApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hr.altima.jsonparsing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hr.altima.jsonparsing" />
+      <option name="MAIN_CLASS_NAME" value="hr.altima.jsonparsing.JsonTest" />
+      <option name="METHOD_NAME" value="convertJsonToObject" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RecordSanitizerTest.sanitizeRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VanillaJavaApplication" />
       <extension name="coverage">
@@ -156,29 +182,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RecordSanitizerTest.setPriceCategoryName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="VanillaJavaApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="record.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="record" />
-      <option name="MAIN_CLASS_NAME" value="record.RecordSanitizerTest" />
-      <option name="METHOD_NAME" value="setPriceCategoryName" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Runner" />
+        <item itemvalue="JUnit.JsonTest.convertJsonToObject" />
         <item itemvalue="JUnit.ClasspathTest.utilSolution" />
         <item itemvalue="Application.RunnerWithoutXPath" />
         <item itemvalue="JUnit.RecordSanitizerTest.sanitizeRecord" />
-        <item itemvalue="JUnit.RecordSanitizerTest.setPriceCategoryName" />
       </list>
     </recent_temporary>
   </component>
@@ -205,7 +215,12 @@
       <workItem from="1657091815320" duration="3625000" />
       <workItem from="1657106076043" duration="56000" />
       <workItem from="1657177340210" duration="10421000" />
-      <workItem from="1657192282161" duration="6696000" />
+      <workItem from="1657192282161" duration="9144000" />
+      <workItem from="1657263781497" duration="21021000" />
+      <workItem from="1657368960237" duration="2060000" />
+      <workItem from="1657443765617" duration="10239000" />
+      <workItem from="1657480773692" duration="798000" />
+      <workItem from="1657522979261" duration="4725000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit: JSON parser is finished, XML parser is being developed, the project structure is partially built">
       <created>1656484457341</created>
@@ -235,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657094742421</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed: Logic, Relative paths, GitIgnore, Logging">
+      <created>1657199346506</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657199346506</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +291,8 @@
     <MESSAGE value="Implemented: XML editing functionalities" />
     <MESSAGE value="Resolved: XPath configured, reporting to database enabled, processing delayed with Timer" />
     <MESSAGE value="Resolved: Json reports" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resolved: Json reports" />
+    <MESSAGE value="Fixed: Logic, Relative paths, GitIgnore, Logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed: Logic, Relative paths, GitIgnore, Logging" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

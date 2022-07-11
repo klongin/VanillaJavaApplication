@@ -1,14 +1,13 @@
 package hr.altima.jsonparsing;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.io.File;
 import java.io.IOException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
-import hr.altima.jsonparsing.pojo.AuthorPojo;
-import hr.altima.jsonparsing.pojo.BookPojo;
-import hr.altima.jsonparsing.pojo.DayPojo;
+import hr.altima.dataaccess.tables.Report;
 import hr.altima.jsonparsing.pojo.SimpleTestCaseJsonPojo;
-import hr.altima.utilities.jsonparsing.JsonParser;
+import hr.altima.utils.jsonparsing.JsonParser;
 import org.junit.jupiter.api.Test;
 
 class JsonTest {
@@ -52,44 +51,14 @@ class JsonTest {
     }
 
     @Test
-    void dayTestScenario1() throws IOException {
-        String dayScenario1 = """
-            {
-             "date": "2019-12-25",\s
-            "name": "Christmas Day"\s
-            }\s""".indent(1);
-        JsonNode node = JsonParser.parse(dayScenario1);
-        DayPojo pojo = JsonParser.fromJson(node, DayPojo.class);
+    void convertJsonToObject() throws IOException {
+        Report r1 = new Report("111", System.currentTimeMillis(), "root element");
 
-        assertEquals(pojo.getDate().toString(), "2019-12-25");
-    }
+        JsonParser.convertObjectToJson(r1, new File("src//test//java//hr//altima//jsonparsing//pojo").getAbsolutePath(),
+            "111");
 
-    @Test
-    void authorBookScenario1() throws IOException {
-        String authorBookScenario = """
-            {
-              "authorName": "Karlo",
-              "books":[
-                  {
-                    "title": "Title1",
-                    "inPrint": true,
-                    "publishDate": "2019-12-25"
-                  },
-                  {
-                  "title": "Title2",
-                  "inPrint": false,
-                  "publishDate": "2019-12-25"
-                  }
-                ]
-            }""";
-        JsonNode node = JsonParser.parse(authorBookScenario);
-        AuthorPojo pojo = JsonParser.fromJson(node, AuthorPojo.class);
-
-        System.out.println("Author : " + pojo.getAuthorName());
-        for (BookPojo bp : pojo.getBooks()) {
-            System.out.println("Book : " + bp.getTitle());
-            System.out.println("Is In Print? : " + bp.isInPrint());
-            System.out.println("Date : " + bp.getPublishDate());
-        }
+        Report r2 = (Report) JsonParser.convertJsonToObject(
+            new File("src//test//java//hr//altima//jsonparsing//pojo//Report-111.json"));
+        System.out.println(r2.getMessageID() + r2.getExecutionTime() + r2.getRootElement());
     }
 }

@@ -1,4 +1,4 @@
-package hr.altima.utilities.jsonparsing;
+package hr.altima.utils.jsonparsing;
 
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -9,7 +9,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.apache.commons.io.FilenameUtils;
 
 /**
  * Class for parsing JSON files
@@ -21,9 +20,7 @@ public class JsonParser {
 
     private static ObjectMapper getDefaultObjectMapper() {
         ObjectMapper defaultObjectMapper = new ObjectMapper();
-        // This supports newer Time classes such as LocalTime
         defaultObjectMapper.registerModule(new JavaTimeModule());
-        // Jackson feature that filters out files that do not have required attributes upon deserialization
         defaultObjectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         return defaultObjectMapper;
     }
@@ -57,13 +54,12 @@ public class JsonParser {
         if (pretty) {
             objectWriter = objectWriter.with(SerializationFeature.INDENT_OUTPUT);
         }
-
         return objectWriter.writeValueAsString(jsonNode);
     }
 
-    public static void objectToJson(Object a, String directory, String fileName) throws IOException {
+    public static void convertObjectToJson(Object a, String directory, String fileName) throws IOException {
         objectMapper.writeValue(
-            Paths.get(String.format("%s\\report-%s.json", directory, FilenameUtils.removeExtension(fileName))).toFile(),
-            a);
+            Paths.get(String.format("%s\\%s-%s.json", directory, a.getClass().getSimpleName(),
+                fileName)).toFile(), a);
     }
 }

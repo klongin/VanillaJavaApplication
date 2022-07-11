@@ -1,8 +1,6 @@
 package hr.altima.dataaccess;
 
-
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,21 +10,25 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import hr.altima.utils.txtparsing.TextFileParser;
 
 public class PostgreSQLDatabase {
 
     private final String url;
     private final String username;
     private final String password;
-
-    Connection connection;
+    private Connection connection;
 
     public PostgreSQLDatabase() {
-        // nije mi se dalo komplicirat...
-        List<String> credentials = getUserData();
-        this.url = credentials.get(0);
-        this.username = credentials.get(1);
-        this.password = credentials.get(2);
+        try {
+            String connectionInfo = TextFileParser.parse(new File("connection.txt").getAbsolutePath());
+            String[] credentials = connectionInfo.split("\n");
+            this.url = credentials[0];
+            this.username = credentials[1];
+            this.password = credentials[2];
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void connect() throws SQLException {
@@ -36,60 +38,34 @@ public class PostgreSQLDatabase {
         }
     }
 
-    public boolean disconnect() throws SQLException {
+    public void disconnect() throws SQLException {
         if (this.connection != null) {
             this.connection.close();
-            return true;
         }
-        return false;
     }
 
-    public List<String> getUserData() {
-        BufferedReader reader;
-        List<String> credentials = new ArrayList<>();
-        try {
-            String userCredentials = "C:\\Users\\Karlo\\IdeaProjects\\VanillaJavaApplication\\connection.txt";
-            reader = new BufferedReader(new FileReader(userCredentials));
-            String line = reader.readLine();
-            credentials.add(line);
-            while (line != null) {
-                line = reader.readLine();
-                credentials.add(line);
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return credentials;
-    }
-
-    public List<ArrayList<String>> getData(String query) {
+    public List<ArrayList<String>> getData(String query) throws SQLException {
         List<ArrayList<String>> data = new ArrayList<>();
+        Statement st = connection.createStatement();
+        ResultSet rs = st.executeQuery(query);
+        ResultSetMetaData rsMetaData = rs.getMetaData();
 
-        try (Statement st = connection.createStatement()) {
-            ResultSet rs = st.executeQuery(query);
-            ResultSetMetaData rsMetaData = rs.getMetaData();
-
-            while (rs.next()) {
-                ArrayList<String> rows = new ArrayList<>();
-                for (int i = 1; i <= rsMetaData.getColumnCount(); i++) {
-                    rows.add(rs.getString(i));
-                }
-                data.add(rows);
+        while (rs.next()) {
+            ArrayList<String> rows = new ArrayList<>();
+            for (int i = 1; i <= rsMetaData.getColumnCount(); i++) {
+                rows.add(rs.getString(i));
             }
-        } catch (SQLException sqle) {
-            System.out.println(sqle.getMessage());
+            data.add(rows);
         }
+        st.close();
         return data;
     }
 
-    public boolean setData(String query) {
-        int rowsUpdated = 0;
-        try (Statement st = connection.createStatement()) {
-            rowsUpdated = st.executeUpdate(query);
-        } catch (SQLException sqle) {
-            System.out.println(sqle.getMessage());
-        }
+    public boolean setData(String query) throws SQLException {
+        int rowsUpdated;
+        Statement st = connection.createStatement();
+        rowsUpdated = st.executeUpdate(query);
+        st.close();
         return rowsUpdated > 0;
     }
 }
